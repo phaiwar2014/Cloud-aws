@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install # หรือถ้าเป็นโปรเจกต์ HTML ธรรมดาไม่ต้องมีบรรทัดนี้
+    build:
+      commands:
+        - echo "Building my car service app..."
+  artifacts:
+    baseDirectory: . # ชี้ไปที่โฟลเดอร์ที่มีไฟล์ index.html ของคุณ
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
